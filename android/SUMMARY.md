@@ -1,0 +1,22 @@
+# Summary
+
+* [Introduction](README.md)
+* [1. activity chapter]()
+  - [activity基础](activity/1. activity.md)
+  - [activity继承关系](activity\Inheritance relationship.md)
+  - [Intent](intent.md)
+* [2. fragment chapter]()
+  - [fragment](fragment\fragment.md)
+* [3. UI](UI\ui.md)
+* [4. broadcast]()
+  - [broadcast 基础](broadcast\broadcast.md)
+  - [broadcast 子类](broadcast\subclass.md)
+* [5. persistence]()
+  - [persistence 概要](persistence.md)
+* [pattern]()
+  - [factory](pattern\factory.md)
+* [debug]()
+  - [processDebugResources](processDebugResources.md)
+* [tools]()
+  - [adb](adb.md)
+  - 

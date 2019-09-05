@@ -1,0 +1,119 @@
+! Current configuration : 1925 bytes
+!
+! Last configuration change at UTC Wed Jan 09 18:03:47 2019
+! Flash config last updated at UTC Wed Jan 09 19:44:31 2019
+! Configuration version 0.41
+!
+
+!software version 7.3.1.40(R)(integrity)
+!software image file flash0: /flash/rp37-7.3.1.40(R).pck
+!compiled on Oct 20 2017, 15:07:08
+
+hostname sw2
+            
+
+
+
+cardreset-exception reboot enable
+
+ip load-sharing per-destination
+ipv6 load-sharing per-destination
+
+
+
+
+
+spanning-tree mst instance 0 priority 8192
+spanning-tree enable
+
+link-aggregation 1 mode lacp
+
+vlan 1
+ exit
+
+vlan 10,20,100,200
+
+
+
+
+!slot_0_1_5GE
+interface gigabitethernet0/0
+ link-aggregation 1 active
+ exit
+interface gigabitethernet0/1
+ link-aggregation 1 active
+ exit
+interface gigabitethernet0/2
+ switchport mode trunk
+ switchport trunk allowed vlan add 1,10,20
+ switchport trunk pvid vlan 1
+ exit
+interface gigabitethernet0/3
+ switchport mode trunk
+ switchport trunk allowed vlan add 1,100,200
+ switchport trunk pvid vlan 1
+ exit
+interface gigabitethernet0/4
+ exit
+!end
+
+
+link-aggregation 1
+ switchport mode trunk
+ switchport trunk allowed vlan add 1,10,20,100,200
+ switchport trunk pvid vlan 1
+ exit
+
+telnet server disable
+
+ 		                
+
+interface vlan10
+ ip address 192.168.1.253 255.255.255.0
+ vrrp 1 ip 192.168.1.254
+ exit
+
+
+interface vlan20
+ ip address 192.168.2.253 255.255.255.0
+ vrrp 2 ip 192.168.2.254
+ vrrp 2 priority 150
+ exit
+
+
+interface vlan100
+ ip address 192.168.100.253 255.255.255.0
+ vrrp 3 ip 192.168.100.254
+ exit
+
+
+interface vlan200
+ ip address 192.168.200.253 255.255.255.0
+ vrrp 4 ip 192.168.200.254
+ vrrp 4 priority 150
+ exit
+
+!slot_0_2_4G
+
+interface fastcellular1
+ dialer config apn AUTO
+ dialer config username card password 7 92cd66abc5
+ dialer config authtype chap
+ dialer config ipfamily ipv4
+ exit
+
+!end
+
+
+interface null0
+ exit
+
+                                     
+
+
+
+!Do NOT modify the following configuration version
+! Configuration version 0.41
+! 
+!end 
+

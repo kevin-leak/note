@@ -1,0 +1,17 @@
+maths-symbols – Summary of mathematical symbols available in LaTeX
+
+
+
+maths-symbols.tex (David Carlisle) (formerly symbols.tex)
+A predecessor of the comprehensive symbols list, covering mathematical
+symbols available in standard LaTeX (including the AMS symbols, if
+available at compile time).
+
+scriptfonts.tex (Robin Fairbairns)
+A development, with examples, of an answer in the UK TeX FAQ,
+showing the Script or Caligraphic fonts generally available
+to the user of LaTeX at the time this file was written.
+
+
+
+

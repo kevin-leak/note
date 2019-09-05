@@ -1,0 +1,24 @@
+Building Configuration...done
+
+! Current configuration : 1602 bytes
+!
+! Last configuration change at UTC Wed Jan 09 21:16:37 2019
+! Flash config last updated at UTC Wed Jan 09 21:22:31 2019
+! Configuration version 0.41
+!
+
+!software version 7.3.1.40(R)(integrity)
+!software image file flash0: /flash/rp37-7.3.1.40(R).pck
+!compiled on Oct 20 2017, 15:07:08
+
+hostname sw4
+            
+
+
+user admin privilege 15 password 7 d8302d71d85d
+user admin service-type telnet console ssh web ftp ppp
+
+cardreset-exception reboot enable
+
+ip load-sharing per-destination
+ipv6 load-sharing per-destination

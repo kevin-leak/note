@@ -1,0 +1,151 @@
+!startup crc:1424793360
+
+! Current configuration : 2501 bytes
+!
+! Last configuration change at UTC Wed Jan 09 17:22:41 2019
+! Flash config last updated at UTC Wed Jan 09 19:39:14 2019
+! Configuration version 0.12
+!
+
+!software version 7.3.1.40(R)(integrity)
+!software image file flash0: /flash/rp37-7.3.1.40(R).pck
+!compiled on Oct 20 2017, 15:07:08
+
+hostname sw1
+            
+
+
+user admin privilege 15 password 7 4dca0424a226
+user admin service-type telnet console ssh web ftp ppp
+
+cardreset-exception reboot enable
+
+ip load-sharing per-destination
+ipv6 load-sharing per-destination
+
+
+
+
+
+spanning-tree mst instance 0 priority 4096
+spanning-tree enable
+
+link-aggregation 1 mode lacp
+
+vlan 1
+ exit
+
+vlan 10,20,100,200,1000,2000
+
+
+
+
+!slot_0_1_5GE
+interface gigabitethernet0/0
+ link-aggregation 1 active
+ exit
+interface gigabitethernet0/1
+ link-aggregation 1 active
+ exit
+interface gigabitethernet0/2
+ switchport mode trunk
+ switchport trunk allowed vlan add 1,100,200
+ switchport trunk pvid vlan 1
+ exit
+interface gigabitethernet0/3
+ switchport mode trunk
+ switchport trunk allowed vlan add 1,10,20
+ switchport trunk pvid vlan 1
+ exit
+interface gigabitethernet0/4
+ switchport access vlan 2000
+ exit
+!end
+
+
+link-aggregation 1
+ switchport mode trunk
+ switchport trunk allowed vlan add 1,10,20,100,200
+ switchport trunk pvid vlan 1
+ exit
+
+telnet server disable
+
+ 		                
+
+interface vlan10
+ ip address 192.168.1.252 255.255.255.0
+ vrrp 1 ip 192.168.1.254
+ vrrp 1 priority 150
+ exit
+
+
+interface vlan20
+ ip address 192.168.2.252 255.255.255.0
+ vrrp 2 ip 192.168.2.254
+ exit
+
+
+interface vlan100
+ ip address 192.168.100.252 255.255.255.0
+ vrrp 3 ip 192.168.100.254
+ vrrp 3 priority 150
+ exit
+
+
+interface vlan200
+ ip address 192.168.200.252 255.255.255.0
+ vrrp 4 ip 192.168.200.254
+ exit
+
+
+interface vlan1000
+ exit
+
+
+interface vlan2000
+ ip address 192.168.10.1 255.255.255.0
+ exit
+
+!slot_0_2_4G
+
+interface fastcellular1
+ dialer config apn CMNET
+ dialer config username card password 7 5c55ecb420
+ dialer config authtype chap
+ dialer config ipfamily ipv4
+ exit
+
+!end
+
+!slot_0_3_4G
+
+interface fastcellular2
+ dialer config apn CMNET
+ dialer config username card password 7 1948364c71
+ dialer config authtype chap
+ dialer config ipfamily ipv4
+ exit
+
+!end
+
+
+interface null0
+ exit
+
+                                     
+ip dhcp pool 1800X
+ range 192.168.10.100 192.168.10.250 255.255.255.0
+ default-router 192.168.10.1 
+ exit
+
+ip http server webrom-rp37-V001R002C00B032.rom
+
+
+
+
+!Do NOT modify the following configuration version
+! Configuration version 0.12
+! 
+!end 
+

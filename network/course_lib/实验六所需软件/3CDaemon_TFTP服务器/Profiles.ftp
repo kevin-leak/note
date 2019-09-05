@@ -1,0 +1,11 @@
+[anonymous]
+Password = NoPassword
+CanLogin = 1
+CanUpload = 0
+CanDownload = 1
+CanOverwrite = 0
+CanDelete = 0
+CanRename = 0
+CanRmdir = 0
+CanMkDir = 0
+UserDir = C:\Users\ADMINI~1\AppData\Local\Temp\
