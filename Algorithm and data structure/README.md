@@ -18,5 +18,14 @@
 
 中文：https://visualgo.net/sh
 
+练习连接：
 
+- 程序员面试宝典：https://www.nowcoder.com/ta/cracking-the-coding-interview
+- 剑指offer：https://www.nowcoder.com/ta/coding-interviews
+
+题集收集：
+
+[编程之法：面试和算法心得](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/00.01.html) 
+
+题目信息知识：https://oi-wiki.org/
 
